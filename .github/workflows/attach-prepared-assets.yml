@@ -1,0 +1,22 @@
+name: Attach verified Windows release files
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: attach-prepared-windows-release
+  cancel-in-progress: false
+jobs:
+  attach:
+    if: github.repository == 'Yusufozkal/bulten-guncellemeler' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Verify signed metadata, reconstruct installer and attach to draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node publisher/attach-assets.cjs
