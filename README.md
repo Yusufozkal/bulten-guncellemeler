@@ -5,7 +5,7 @@ Bülten Studio kurucuları bu deponun [Releases](https://github.com/Yusufozkal/b
 ## Kurulum ve güncelleme
 
 - Windows 10/11, 64 bit gerekir.
-- 3.0 veya önceki sürümlerde güncelleme istemcisi yoktur; 3.1.0 kurucusu bir kez elle kurulmalıdır.
+- 3.0 veya önceki sürümlerde güncelleme istemcisi yoktur; güncel kurucu bir kez elle kurulmalıdır.
 - 3.1 ve sonraki sürümlerde **Güncellemeler → Güncelleme ayarları** bölümüne şu depo bağlantısını kaydedin:
 
 ```
@@ -27,3 +27,7 @@ https://github.com/Yusufozkal/bulten-guncellemeler/releases/latest/download/late
 Bu doğrulama Windows Authenticode yayıncı sertifikası değildir; Windows yayıncı uyarısı devam edebilir. Kaynak ve paket kontrolleri yapılmıştır; bu yayının gerçek Windows cihazında kurulumu henüz doğrulanmamıştır.
 
 Bu depo güncelleme dağıtımı içindir. Uygulamanın kaynak kodu bu depoda yayımlanmamaktadır.
+
+## 3.1.1 güvenlik yaması
+
+Zararlı görsel/proje dosyalarının aşırı kaynak tüketimi, kesilen güncelleme kaydında eski imzalı yayının yeniden önerilmesi ve kayıt başarısızken kapanma düzeltildi. Electron 44.9.3 kullanılır. 48 MP üzerindeki fotoğraflar için küçültülmüş kopya gerekir.

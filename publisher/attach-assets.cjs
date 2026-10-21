@@ -1,8 +1,8 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
-const REPO='Yusufozkal/bulten-guncellemeler',RELEASE_ID=419287437,TAG='v3.1.0';
-const BYTES=104444288,SHA256='40558ec93692311cae0138bc417f1a5e88a023103c59ef6eb1c889837637b6f3',KEY_ID='ed25519:c5584085b0c35f1c2bf52142e322236f';
-const FILE='Bulten-Studio-3.1.0-Setup.exe',sha=b=>crypto.createHash('sha256').update(b).digest('hex');
+const REPO='Yusufozkal/bulten-guncellemeler',RELEASE_ID=419430158,TAG='v3.1.1';
+const BYTES=104361347,SHA256='27d3a659576ca3b4df632de315d8b5821457b40c28a5a6c59202655c22454c15',KEY_ID='ed25519:c5584085b0c35f1c2bf52142e322236f';
+const FILE='Bulten-Studio-3.1.1-Setup.exe',sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const C=require('./update-contract.cjs');
 function requireValue(condition,message){if(!condition)throw Error(message);}
 function validatePlan(p){
@@ -17,8 +17,8 @@ function validateRelease(r){requireValue(r&&r.id===RELEASE_ID&&r.tag_name===TAG&
 function loadData(directory=__dirname){
  const plan=validatePlan(JSON.parse(fs.readFileSync(path.join(directory,'upload-plan.json'),'utf8'))),raw=fs.readFileSync(path.join(directory,'latest.json'));
  const pin=JSON.parse(fs.readFileSync(path.join(directory,'update-public-key.json'),'utf8'));requireValue(pin.keyId===KEY_ID,'Public key identity mismatch.');
- const checked=C.verifyEnvelope(raw,{publicKey:pin,appVersion:'3.1.0'}).payload;
- requireValue(checked.version==='3.1.0'&&checked.sequence===30100&&checked.installer.fileName===FILE&&checked.installer.size===BYTES&&checked.installer.sha256===SHA256&&checked.installer.url==='https://github.com/'+REPO+'/releases/download/'+TAG+'/'+FILE,'Signed installer metadata mismatch.');
+ const checked=C.verifyEnvelope(raw,{publicKey:pin,appVersion:'3.1.1'}).payload;
+ requireValue(checked.version==='3.1.1'&&checked.sequence===30101&&checked.installer.fileName===FILE&&checked.installer.size===BYTES&&checked.installer.sha256===SHA256&&checked.installer.url==='https://github.com/'+REPO+'/releases/download/'+TAG+'/'+FILE,'Signed installer metadata mismatch.');
  return{plan,raw,pin};
 }
 function gh(args,maxBuffer=1024*1024){return execFileSync('gh',args,{encoding:null,maxBuffer,stdio:['ignore','pipe','pipe'],timeout:180000});}
@@ -39,7 +39,7 @@ function main(){
   requireValue(total===BYTES&&fs.statSync(installer).size===BYTES&&hash.digest('hex')===SHA256,'Assembled installer verification failed.');
   const manifest=path.join(directory,'latest.json');fs.writeFileSync(manifest,raw,{mode:0o600,flag:'wx'});
   const expected=[{name:FILE,file:installer,size:BYTES,hash:SHA256},{name:'latest.json',file:manifest,size:raw.length,hash:sha(raw)}];
-  for(const item of expected){const state=release(),asset=state.assets.find(a=>a.name===item.name);if(asset){existingMatches(asset,item.hash,item.size);console.log('Verified existing asset '+item.name);}else{gh(['release','upload',TAG,item.file,'--repo',REPO],1024*1024);console.log('Attached '+item.name);}}
+  for(const item of expected){const state=release(),asset=state.assets.find(a=>a.name===item.name);if(asset){existingMatches(asset,item.hash,item.size);console.log('Verified existing asset '+item.name);}else{const uploaded=JSON.parse(gh(['api','--method','POST','https://uploads.github.com/repos/'+REPO+'/releases/'+RELEASE_ID+'/assets?name='+encodeURIComponent(item.name),'-H','Content-Type: application/octet-stream','--input',item.file],1024*1024).toString('utf8'));requireValue(uploaded.name===item.name,'Uploaded asset identity mismatch.');existingMatches(uploaded,item.hash,item.size);console.log('Attached '+item.name);}}
   const state=release();requireValue(state.assets.length===2,'Incomplete release asset set.');for(const item of expected)existingMatches(state.assets.find(a=>a.name===item.name),item.hash,item.size);
   console.log(JSON.stringify({releaseId:RELEASE_ID,tag:TAG,draft:true,published:false,verifiedAssets:expected.map(x=>x.name)}));
  }finally{fs.rmSync(directory,{recursive:true,force:true});}
