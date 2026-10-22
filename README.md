@@ -31,3 +31,7 @@ Bu depo güncelleme dağıtımı içindir. Uygulamanın kaynak kodu bu depoda ya
 ## 3.1.1 güvenlik yaması
 
 Zararlı görsel/proje dosyalarının aşırı kaynak tüketimi, kesilen güncelleme kaydında eski imzalı yayının yeniden önerilmesi ve kayıt başarısızken kapanma düzeltildi. Electron 44.9.3 kullanılır. 48 MP üzerindeki fotoğraflar için küçültülmüş kopya gerekir.
+
+## 3.1.2 hata düzeltmeleri
+
+UTF-8 BOM içeren projelerin açılması, %600 fotoğraf yakınlaştırması, video hazırlığını iptal etme, geciken proje okuması ve güncelleme hatasından sonra doğrulanmış indirmeyi/kurulumu yeniden deneme düzeltildi. Hatalı güncelleme ayarı girildiğinde adres ve seçenekler korunur. Proje biçimi ve uygulama kimliği değişmez.
