@@ -1,8 +1,8 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
-const REPO='Yusufozkal/bulten-guncellemeler',RELEASE_ID=422796451,TAG='v3.2.0';
-const BYTES=104397607,SHA256='77f7c21c15b04e13040d3df8819359a3a66861dc27a401715a8dc9d6e2721e92',KEY_ID='ed25519:c5584085b0c35f1c2bf52142e322236f';
-const FILE='Bulten-Studio-3.2.0-Setup.exe',sha=b=>crypto.createHash('sha256').update(b).digest('hex');
+const REPO='Yusufozkal/bulten-guncellemeler',RELEASE_ID=425451976,TAG='v3.2.1';
+const BYTES=104370511,SHA256='6612d0cfb5aefd805c971251ac17d5d36fed84b145f4325a8fb69831fc25a626',KEY_ID='ed25519:c5584085b0c35f1c2bf52142e322236f';
+const FILE='Bulten-Studio-3.2.1-Setup.exe',sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 const C=require('./update-contract.cjs');
 function requireValue(condition,message){if(!condition)throw Error(message);}
 function validatePlan(p){
@@ -17,8 +17,8 @@ function validateRelease(r){requireValue(r&&r.id===RELEASE_ID&&r.tag_name===TAG&
 function loadData(directory=__dirname){
  const plan=validatePlan(JSON.parse(fs.readFileSync(path.join(directory,'upload-plan.json'),'utf8'))),raw=fs.readFileSync(path.join(directory,'latest.json'));
  const pin=JSON.parse(fs.readFileSync(path.join(directory,'update-public-key.json'),'utf8'));requireValue(pin.keyId===KEY_ID,'Public key identity mismatch.');
- const checked=C.verifyEnvelope(raw,{publicKey:pin,appVersion:'3.2.0'}).payload;
- requireValue(checked.version==='3.2.0'&&checked.sequence===30200&&checked.installer.fileName===FILE&&checked.installer.size===BYTES&&checked.installer.sha256===SHA256&&checked.installer.url==='https://github.com/'+REPO+'/releases/download/'+TAG+'/'+FILE,'Signed installer metadata mismatch.');
+ const checked=C.verifyEnvelope(raw,{publicKey:pin,appVersion:'3.2.1'}).payload;
+ requireValue(checked.version==='3.2.1'&&checked.sequence===30201&&checked.installer.fileName===FILE&&checked.installer.size===BYTES&&checked.installer.sha256===SHA256&&checked.installer.url==='https://github.com/'+REPO+'/releases/download/'+TAG+'/'+FILE,'Signed installer metadata mismatch.');
  return{plan,raw,pin};
 }
 function gh(args,maxBuffer=1024*1024){return execFileSync('gh',args,{encoding:null,maxBuffer,stdio:['ignore','pipe','pipe'],timeout:180000});}

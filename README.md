@@ -39,3 +39,7 @@ UTF-8 BOM içeren projelerin açılması, %600 fotoğraf yakınlaştırması, vi
 ## 3.2.0 video düzenleyici
 
 Yerel MP4/WebM dosyalarını kesme, kadraj ve döndürme, ses seviyesi, yazı ekleme ve en fazla 60 saniyelik çıktı alma eklendi. Videolar sunucuya yüklenmez; mevcut animasyon aracı korunur. Çıktı biçimi cihazın video kodlayıcısına bağlıdır.
+
+## 3.2.1 video zaman çizelgesi
+
+Video düzenleyicide seçili bölüm, oynatma konumu ve sürüklenebilir başlangıç/bitiş işaretleriyle daha kolay kurgu yapılır. Video cihazda işlenir; güncelleme imza doğrulaması korunur.
