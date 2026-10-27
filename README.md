@@ -35,3 +35,7 @@ Zararlı görsel/proje dosyalarının aşırı kaynak tüketimi, kesilen güncel
 ## 3.1.2 hata düzeltmeleri
 
 UTF-8 BOM içeren projelerin açılması, %600 fotoğraf yakınlaştırması, video hazırlığını iptal etme, geciken proje okuması ve güncelleme hatasından sonra doğrulanmış indirmeyi/kurulumu yeniden deneme düzeltildi. Hatalı güncelleme ayarı girildiğinde adres ve seçenekler korunur. Proje biçimi ve uygulama kimliği değişmez.
+
+## 3.2.0 video düzenleyici
+
+Yerel MP4/WebM dosyalarını kesme, kadraj ve döndürme, ses seviyesi, yazı ekleme ve en fazla 60 saniyelik çıktı alma eklendi. Videolar sunucuya yüklenmez; mevcut animasyon aracı korunur. Çıktı biçimi cihazın video kodlayıcısına bağlıdır.

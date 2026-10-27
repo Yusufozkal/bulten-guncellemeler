@@ -2,78 +2,78 @@
   "schema": "bulten-release-upload-plan",
   "schemaVersion": 1,
   "repository": "Yusufozkal/bulten-guncellemeler",
-  "releaseId": 420878567,
-  "tag": "v3.1.2",
+  "releaseId": 422796451,
+  "tag": "v3.2.0",
   "installer": {
-    "fileName": "Bulten-Studio-3.1.2-Setup.exe",
-    "bytes": 104381058,
-    "sha256": "3ac0416723d0d9d9f70bdd1ada4e365e281a99a3b45778cc0e4e7513dee83e5d"
+    "fileName": "Bulten-Studio-3.2.0-Setup.exe",
+    "bytes": 104397607,
+    "sha256": "77f7c21c15b04e13040d3df8819359a3a66861dc27a401715a8dc9d6e2721e92"
   },
   "chunks": [
     {
-      "sha": "50f5d4d50f99ad2a6ddba9053831f4c9f83f3395",
+      "sha": "3890a8eafe6d1b5adfa76a7d36a00949d093647d",
       "bytes": 8388608,
-      "sha256": "8cc875d5a8888fcdd5d0a00a6ae93f5d7ca76653e15e4b8efe514f5f06dc8ea3"
+      "sha256": "d09e01fad1451a8568e1bd1f57220abd04be240d8b5294bf30840fd5c8ebec87"
     },
     {
-      "sha": "916b8da361d1729a278ce4ddbc4d1a3dc2c66685",
+      "sha": "df164df43cf122d2651bbf8a9900aff80cf58b32",
       "bytes": 8388608,
-      "sha256": "d7d9aee3ad9537fd3b4618b77e597975169fb7241cde7e09350358d4f61ae8a6"
+      "sha256": "0fbef8a46bf18d505dddd0fc35507f85c7e6580db4a3dab2809beeed99c4c469"
     },
     {
-      "sha": "7921e3a76e4c34b179c4d985670d01ddaa36f2b5",
+      "sha": "1c89fdc1beeafed3625e6e65267dbd148ff524ed",
       "bytes": 8388608,
-      "sha256": "699adbc90f01e86be85b549f084b11d1d3819ca3d657ba7096bbc71b6051e395"
+      "sha256": "5dc311385da0582da50589e6d7f4d28803edf01784eeefba19df4f01ad8fa603"
     },
     {
-      "sha": "6e89f4a936baf6e054cfa32851bd247dea2b67f2",
+      "sha": "1bb93925677b7de94d484718228ad1d6cd101dc9",
       "bytes": 8388608,
-      "sha256": "3213d2c93c2b6908452b045275160c3eba2010c51c4f4c75b2858e81e72be182"
+      "sha256": "8349a5980a7b604c5918f4a700ef48581adbe823f9fbe6560ea2fb25de9d492c"
     },
     {
-      "sha": "b33fa59445c608b42f548a95e37c12d668d90861",
+      "sha": "bda61958ce3c087a6b0f302aac3de34c26994b6b",
       "bytes": 8388608,
-      "sha256": "6baf5a23666841c7334a7844b95dda9afbeaa52a0e739fb9cc45f83088270c7b"
+      "sha256": "7a96561b2b06c19d874eefec4ba1c382f6e35c00d92b55a9cf5776cef33b5659"
     },
     {
-      "sha": "f299bd60dfd077a410131b40f1c8426a4ce0b61d",
+      "sha": "0f8881d02ec3fe4c2c0672e3bf78c8275acb81f1",
       "bytes": 8388608,
-      "sha256": "0824b919105ad3affe47e5a744289c019252c34c7a816a913548765eddf39ceb"
+      "sha256": "8c7889966e885992899960922d7be6051259306b65073b3e2d1aaa5c3a8413eb"
     },
     {
-      "sha": "7e9f4dbfc22fd2eb89dab20df5171cf0b2b5e41c",
+      "sha": "7798d7f1f949a997eec07a789c052eda7f905389",
       "bytes": 8388608,
-      "sha256": "7452981d2e5f84f058d161b566e3281052c5ed672322d9de2cc331bbea30a2bd"
+      "sha256": "1de1299b35feb73eaa390877d02d9043bafe5e4c3b36020f7c88d6b57ea6b50a"
     },
     {
-      "sha": "dfe24041d59388ced42358265ee652fdadc4d697",
+      "sha": "1b34c3062c8c7e331a0fc80181892f91cdf7aa7d",
       "bytes": 8388608,
-      "sha256": "66eea3b863dbfd9bb32cf54399975ec660129c7bf8052109923a13350c8ff16a"
+      "sha256": "769b1917bb74704b121bba1c58e24ba290b79250f143551dcda1ddf83fc81ff5"
     },
     {
-      "sha": "db9eca671fd0313066cd8a01848f4415e67cb27a",
+      "sha": "b407aa161bc4009590728fdda148809769ce5572",
       "bytes": 8388608,
-      "sha256": "fa87d5041f58a843cada4b83033e6eb602eee36ffe0370c1ab7009b47f9d8a00"
+      "sha256": "6238750535f7dcea95996db4c7cc1eef6591370346e76a4e24a61acbbd5f8e3f"
     },
     {
-      "sha": "502b69af06174d079cff0affed6abffa28188997",
+      "sha": "7e1f9e9aab5f59959c24413fa941b9cf793428c6",
       "bytes": 8388608,
-      "sha256": "9fe99dc11ac332d93c0282a345a5ce1c3a55c23682884152605182fa41035903"
+      "sha256": "edde5d418fe47c6f094cfa5424c79622e27de2ab407387642ae093f09d6790ec"
     },
     {
-      "sha": "195feb8ab153efda8d493da6bf4f46be5ac0f4fa",
+      "sha": "5c41ebb062338fc713521c5356e5b7b0ddc25aba",
       "bytes": 8388608,
-      "sha256": "f98ae6fdb0da053d8ea0ed1b18524676dba0bbe72447f80ec1330d8d3b43f37d"
+      "sha256": "a109f04b293db3e84758f26d4a20693eb6865b84c65417e1b87ef53b6a2afde0"
     },
     {
-      "sha": "4d5aa5a872599c16155ae4230cce149290af604f",
+      "sha": "b9baf7a3a53ce05d687f3fa73645afe589dc0934",
       "bytes": 8388608,
-      "sha256": "df83cfb4d23a152c705854ee1f26f0a235460d8fd9a539d0edba34d87f387c1b"
+      "sha256": "d85c6bf53df5109bc77531b18685403506532b1d7181d539b91ae03c4f16fd70"
     },
     {
-      "sha": "d8451bafe42000bbfaae8dd7ba9ac39415be399a",
-      "bytes": 3717762,
-      "sha256": "a80c4dcc7af5d6673546f6cc027e99575852b78d57afd23c370b8912cafafb6c"
+      "sha": "40ed5e7ce5fbcc78e4e601082ebd1a85de39fcef",
+      "bytes": 3734311,
+      "sha256": "3f4ca2886bf1b398d792ecf191a73c6074e86cc9ef72c8d47dd9ee58ce705498"
     }
   ]
 }
